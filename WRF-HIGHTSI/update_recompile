@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cp -vf module_first_rk_step_part1.F module_big_step_utilities_em.F start_em.F module_initialize_real.F  ${WRFROOT}/dyn_em/
+cp -vf registry.dimspec Registry.EM_COMMON ${WRFROOT}/Registry/
+cp -vf module_sf_noah_seaice_drv.F module_surface_driver.F module_sf_noah_seaice.F module_physics_init.F module_sf_noahdrv.F module_sf_noahlsm.F module_sf_noahlsm_glacial_only.F ${WRFROOT}/phys/
+cp -vf module_soil_pre.F ${WRFROOT}/share/
+cp -vp module_hightsi.F Makefile ${WRFROOT}/phys/
+cp -vp depend.common ${WRFROOT}/main
+
+cd ${WRFROOT}
+./clean -a 
+./configure
+./compile em_real
+

@@ -1,0 +1,12 @@
+How to compile and use the WRF-HIGHTSI?
+
+1. Download and compile the original WRFV3.6.1 first.
+
+2. Set the environment variable "WRFROOT" to the path of the original WRFV3.6.1.
+   export WRFROOT=path_of_origional_WRF3.6.1
+
+3. Substitute the source code and recompile WRFV3.
+   ./update_recompile
+
+This will generate the WRF-HIGHTSI which compiled HIGHTSI rather than Noah as sea ice model.
+For more information, please contact yaoraistlin@gmail.com
